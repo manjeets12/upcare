@@ -18,7 +18,8 @@ const { width, height } = Dimensions.get('window');
 
 import styles from 'src/common/styles';
 import {Header} from 'src/components/header';
-import {CartItem} from 'src/components/cartItem'
+import {CartItem} from 'src/components/cartItem';
+import ItemDetailsModal from 'src/components/itemDetailsModal';
 
 const items = [
 {"id":1, "name":"Open Buttock - Above-the-Knee Girdle", "price":300, "quantity":1, "size":'M'},
@@ -31,7 +32,7 @@ const items = [
 import {PATIENT_ICON,PATIENT_WHITE_OUTLINE, PLUS_SHAPE, GROUP31, GROUP34 } from 'src/common/Images';
 
 const OrderForElement =(props)=>{
-   let {name} = props;
+   let {name, navigator} = props;
     return (
           <View style={styles.rowContainer}>
                 <View style={styles.rowLeftPart}>
@@ -44,7 +45,7 @@ const OrderForElement =(props)=>{
                   <Text style={{fontSize:16, color:'#9fa1aa'}}>Ordering for</Text>
                   <Text style={{fontSize:20, color:'#101820', fontWeight:'400'}}>{(name.length <= 15)?name:name.substring(0,11)+" ..."}</Text>
                 </View>
-                <TouchableOpacity onPress ={()=>{}} 
+                <TouchableOpacity onPress ={()=>navigator.push("chooseCategory",{name})} 
                   style={[styles.rowRightPart,styles.fullNoMarginBtn,{flexDirection:'row', borderRadius:30, padding:5, justifyContent:'space-around'}]}>
                   <Image style={styles.ImageSize15}
                     source={PLUS_SHAPE}/>
@@ -61,6 +62,18 @@ OrderForElement.defaultProps = {
 };
 
 class Cart extends Component {
+  constructor(props) {
+        super(props);
+        this.state = {
+            modalVisible:false
+        };
+        this.setModalVisible = this.setModalVisible.bind(this);
+  }
+  setModalVisible(visible){
+      this.setState({
+          modalVisible:visible
+      });
+  }
   renderItem({item, index}){
       let {id, name, price, quantity} = item;
       return(
@@ -69,13 +82,14 @@ class Cart extends Component {
   } 
 
   render() {
+    let {navigator} =this.props;
     return (
       <View style={styles.container}>
           <Header title="CART" />
 
           <ScrollView style={{padding:10}}>
             
-            <OrderForElement name={"Polly Stone"}/>
+            <OrderForElement name={"Polly Stone"} navigator={navigator}/>
             {items && (items.length !=0) &&
                <FlatList
                    data={items}
@@ -85,7 +99,7 @@ class Cart extends Component {
                  />
             }
            
-            <OrderForElement name={"Donald Matthewsshdhdhdjdhdhdh"}/>
+            <OrderForElement name={"Donald Matthewsshdhdhdjdhdhdh"} navigator={navigator}/>
             {items && (items.length !=0) &&
                <FlatList
                    style={{paddingBottom:50}}
@@ -96,10 +110,11 @@ class Cart extends Component {
                  />
             }
           </ScrollView>
-          <TouchableOpacity onPress={()=>{}}
+          <TouchableOpacity onPress={()=>{this.setModalVisible(true)}}
                style={styles.fullNoMarginBtn}>
                 <Text style={[styles.boldText, {color:'#FFF', fontSize:20}]}>PLACE ORDER</Text>
           </TouchableOpacity>
+          <ItemDetailsModal modalVisible ={this.state.modalVisible}/>
       </View>
     );
   }

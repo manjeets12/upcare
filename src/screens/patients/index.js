@@ -28,8 +28,6 @@ const customStyles=StyleSheet.create({
 });
 
 class Patients extends Component {
-
-  
   renderItem({item, index}){
       let {id, name, disease, email, phone} = item;
       return(

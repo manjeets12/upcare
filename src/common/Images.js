@@ -8,6 +8,7 @@ export const LOCK = require('../../assets/Resources/lock.png');
 export const SEARCH_ICON = require('../../assets/Resources/search.png');
 export const RECTANGLE = require('../../assets/Resources/Rectangle.png');
 export const RIGHT = require('../../assets/Resources/right.png');
+export const LEFT = require('../../assets/Resources/back_icon.png');
 export const SEARCH = require('../../assets/Resources/search.png');
 export const TRASH = require('../../assets/Resources/trash.png');
 export const UNCHECK = require('../../assets/Resources/uncheck.png');
@@ -36,6 +37,7 @@ export const SIZE_XL = require('../../assets/Resources/sizeXL.png');
 export const SIZE_XXL = require('../../assets/Resources/sizeXXL.png');
 export const PLUS_ICON = require('../../assets/Resources/plus.png');
 export const PLUS_SHAPE = require('../../assets/Resources/plus_Shape.png');
+export const MINUS_ICON = require('../../assets/Resources/minus.png');
 
 
 

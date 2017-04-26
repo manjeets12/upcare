@@ -73,7 +73,7 @@ export const CartItem =(props)=>{
                   <Text style={customStyles.nameText}>{(name.length <= 25)?name:name.substring(0,21)+" ..."}</Text>
                   <View style={{flexDirection:'row'}}>
                     {(quantity >0) &&<Text style={customStyles.quantityText}>{""+quantity+"X | "}</Text>}
-                    <Text style={customStyles.priceText}>{""+(quantity || 1)*price}</Text>
+                    <Text style={customStyles.priceText}>{"€"+(quantity || 1)*price}</Text>
                   </View>
                 </View>
                 <View style={customStyles.rightContainer}>

@@ -62,7 +62,7 @@ export const UserGradient =(props)=>{
                 
                 <View style={customStyles.middleContainer}>
                   <Text style={styles.orderForText}>Ordering for</Text>
-                  <Text style={customStyles.nameText}>{name}</Text>
+                  <Text style={customStyles.nameText}>{(name.length <= 25)?name:name.substring(0,21)+" ..."}</Text>
                 </View>
                 <TouchableOpacity onPress ={()=>{}} 
                   style={customStyles.rightContainer}>

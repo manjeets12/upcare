@@ -223,7 +223,11 @@ const styles=StyleSheet.create({
         alignItems:'center'
       },
       nameText:{fontSize:20, color:'#101820', fontWeight:'400'},
-      orderForText:{fontSize:16, color:'#9fa1aa'}
+      orderForText:{fontSize:16, color:'#9fa1aa'},
+      priceText:{fontSize:24, color:'#4487fa', fontWeight:'400'},
+      modalOverlay:{flex: 1,justifyContent: 'center',padding:15,backgroundColor: 'rgba(0, 0, 0, 0.5)'},
+      modalContainer:{borderRadius:15,backgroundColor:'#ffffff', maxHeight:500},
+      centeredRow:{flexDirection:'row',justifyContent:'center',alignItems:'center'},
 
    
 });
