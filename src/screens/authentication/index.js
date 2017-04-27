@@ -8,7 +8,8 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  Dimensions
+  Dimensions,
+  Picker
 } from 'react-native';
 import { connect } from 'react-redux';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
@@ -58,6 +59,12 @@ const customStyles=StyleSheet.create({
 });
 
 class Authentication extends Component {
+  constructor(props) {
+     super(props);
+     this.state ={
+       user:"backOffice"
+     }
+  }
   render() {
     return (
       <Image
@@ -81,6 +88,12 @@ class Authentication extends Component {
             <Text style={customStyles.appNameText}>UP-CARE</Text>
             <Text style={{color:'#FFF', fontSize:16}}>Aspect ratio control the size of the dimension of a node. Aspect ratio is a non-standard property </Text>
           </View>
+          <Picker
+            selectedValue={this.state.user}
+            onValueChange={(lang) => this.setState({user: lang})}>
+            <Picker.Item label="Back-Office" value="backOffice" />
+            <Picker.Item label="Patient" value="patient" />
+          </Picker>
          
           <View style={{marginTop:10,marginBottom:10}}>
             <TextInput
@@ -94,7 +107,7 @@ class Authentication extends Component {
                     source={LOCK}/>
           </View>
 
-          <TouchableOpacity onPress={()=>this.props.navigator.push("tabNavigator")}
+          <TouchableOpacity onPress={()=>this.props.navigator.push("tabNavigator",{userType:this.state.user})}
                style={[styles.fullWidthBtn,{marginTop:10}]}>
                 <Text style={[styles.boldText, {color:'#FFF', fontSize:20}]}>Login</Text>
           </TouchableOpacity>

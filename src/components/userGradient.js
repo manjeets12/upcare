@@ -11,8 +11,8 @@ import {
     Platform,
     StatusBar,
 } from 'react-native';
-import { Components } from 'expo';
-const { LinearGradient } = Components;
+import { LinearGradient } from 'expo';
+//const { LinearGradient } = Components;
 
 import styles from 'src/common/styles';
 

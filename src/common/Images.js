@@ -36,6 +36,7 @@ export const SIZE_M = require('../../assets/Resources/sizeM.png');
 export const SIZE_XL = require('../../assets/Resources/sizeXL.png');
 export const SIZE_XXL = require('../../assets/Resources/sizeXXL.png');
 export const PLUS_ICON = require('../../assets/Resources/plus.png');
+export const ADD_ICON = require('../../assets/Resources/Icon_add.png');
 export const PLUS_SHAPE = require('../../assets/Resources/plus_Shape.png');
 export const MINUS_ICON = require('../../assets/Resources/minus.png');
 

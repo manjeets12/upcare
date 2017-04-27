@@ -18,7 +18,7 @@ const { width, height } = Dimensions.get('window');
 
 
 import styles from 'src/common/styles';
-import {CATEGORY_PIC1, GROUP34} from 'src/common/Images';
+import {CATEGORY_PIC1, GROUP34, PATIENT_ICON, CLOSE, RIGHT} from 'src/common/Images';
 import {Header, SearchBar} from 'src/components/header';
 
 const customStyles=StyleSheet.create({
@@ -26,22 +26,33 @@ const customStyles=StyleSheet.create({
 
 });
 
-class Edit extends Component {
+const SaveButton =(props)=>{
+    return(
+        <TouchableOpacity onPress={()=>{}} 
+         style={{flex: 1,alignItems: 'center', justifyContent: 'center'}}>
+          <Text style={{fontSize:18, color:'#4487fa', fontWeight:'400', paddingRight:15}}>Save</Text>
+        </TouchableOpacity>
+    )
+};
+
+
+class Intervention extends Component {
   render() {
     return (
       <View style={styles.container}>
-       
+           
       </View>
     );
   }
 }
-Edit.route = {
+Intervention.route = {
     navigationBar: {
-      title: 'Patient',
+      title: 'INTERVENTION',
+      renderRight: (route, props) => <SaveButton {...props} />,
       backgroundColor:'#ffffff',
       tintColor :'#333',
       borderBottomWidth: 1,
     },
 }
 
-export default connect(state =>({authenticated: true}))(Edit);
+export default connect(state =>({authenticated: true}))(Intervention);

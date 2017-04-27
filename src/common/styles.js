@@ -222,6 +222,23 @@ const styles=StyleSheet.create({
         justifyContent:'center', 
         alignItems:'center'
       },
+
+      /*row with equal side items and big middle container*/
+      leftBox:{
+        flex:2, 
+        justifyContent:'center', 
+        alignItems:'flex-start'
+      },
+      middleBox:{
+        flex:8, 
+        justifyContent:'center', 
+        alignItems:'flex-start'
+      },
+      rightBox:{
+        flex:2, 
+        justifyContent:'center', 
+        alignItems:'flex-end'
+      },
       nameText:{fontSize:20, color:'#101820', fontWeight:'400'},
       orderForText:{fontSize:16, color:'#9fa1aa'},
       priceText:{fontSize:24, color:'#4487fa', fontWeight:'400'},

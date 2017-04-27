@@ -57,7 +57,7 @@ export const SearchBar =(props)=>{
         <View style={[styles.headerShadow, styles.searchBarConatiner]}>
            <Image style={{width:20, height:20, resizeMode:'contain'}}
                 source={SEARCH_ICON}/>
-            <Text style={{fontSize:18, color:'#9e9fa8', paddingLeft:10}}>Research</Text>
+            <Text style={{fontSize:18, color:'#9e9fa8', paddingLeft:10}}>Search</Text>
         </View>
     )
 }

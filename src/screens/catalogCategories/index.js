@@ -24,12 +24,11 @@ import {UserGradient} from 'src/components/userGradient';
 
 class CatalogCategories extends Component {
 
-
   renderItem({item, index}){
       let {id, name, disease, middleName, email, phone} = item;
       return(
          <TouchableOpacity key ={id}
-              onPress={() => {}} 
+              onPress={() => this.props.navigator.push("category",{id, name, disease, email, phone})} 
               style={[styles.catalog, styles.customShadow]}
               elevation={4}>
                 <Image style={styles.catalogImage}
@@ -71,7 +70,7 @@ class CatalogCategories extends Component {
 }
 CatalogCategories.route = {
     navigationBar: {
-      title: 'Catalog Categories',
+      title: 'CATALOG',
       backgroundColor:'#ffffff',
       tintColor :'#333',
       borderBottomColor: '#ebeaec',

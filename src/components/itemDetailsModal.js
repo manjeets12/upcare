@@ -25,11 +25,11 @@ export default class ItemDetailsModal extends Component {
         this.setModalVisible = this.setModalVisible.bind(this);
     }
 
-    componentWillReceiveProps(nextProps){
+    /*componentWillReceiveProps(nextProps){
      if(nextProps.modalVisible){
         this.setModalVisible(true);
      }
-    }
+    }*/
     /*shouldComponentUpdate(nextProps, nextState){
         return (this.props.modalVisible != nextProps.modalVisible);
     }*/
@@ -42,6 +42,7 @@ export default class ItemDetailsModal extends Component {
     render() {
 	    let {modalVisible} = this.state;
         return (
+            <View>
                 <Modal
                     animationType={"slide"}
                     transparent={true}
@@ -127,6 +128,10 @@ export default class ItemDetailsModal extends Component {
                         </View>
                     </View>
                 </Modal>
+                <TouchableOpacity onPress={()=>this.setModalVisible(true)} style={this.props.style}>
+                    {this.props.children}
+                </TouchableOpacity>
+              </View>
         );
     }
 }

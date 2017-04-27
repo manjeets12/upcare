@@ -19,7 +19,7 @@ const { width, height } = Dimensions.get('window');
 import styles from 'src/common/styles';
 import {Header} from 'src/components/header';
 import {CartItem} from 'src/components/cartItem';
-import ItemDetailsModal from 'src/components/itemDetailsModal';
+import PlacingOrderModal from 'src/components/placingOrderModal';
 
 const items = [
 {"id":1, "name":"Open Buttock - Above-the-Knee Girdle", "price":300, "quantity":1, "size":'M'},
@@ -110,11 +110,9 @@ class Cart extends Component {
                  />
             }
           </ScrollView>
-          <TouchableOpacity onPress={()=>{this.setModalVisible(true)}}
-               style={styles.fullNoMarginBtn}>
+          <PlacingOrderModal style={styles.fullNoMarginBtn}>
                 <Text style={[styles.boldText, {color:'#FFF', fontSize:20}]}>PLACE ORDER</Text>
-          </TouchableOpacity>
-          <ItemDetailsModal modalVisible ={this.state.modalVisible}/>
+          </PlacingOrderModal>
       </View>
     );
   }

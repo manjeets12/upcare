@@ -12,8 +12,6 @@ import {
   TouchableOpacity,
   Dimensions
 } from 'react-native';
-import { Components } from 'expo';
-const { LinearGradient } = Components;
 import { connect } from 'react-redux';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 const { width, height } = Dimensions.get('window');
@@ -22,6 +20,7 @@ const { width, height } = Dimensions.get('window');
 import styles from 'src/common/styles';
 import {PATIENT_ICON} from 'src/common/Images';
 import {Header, SearchBar} from 'src/components/header';
+import {UserGradient} from 'src/components/userGradient';
 
 const customStyles=StyleSheet.create({
    
@@ -36,15 +35,7 @@ class Profile extends Component {
       <View style={[styles.container]}>
         <ScrollView>
          <View style={[{margin:15},styles.customShadow]}>
-           <LinearGradient
-              colors={['#79cafe', '#70b2fe', '#6595fd']}
-              style={{flexDirection:'row', alignItems:'center', padding:15}}>
-                <Image style={styles.ImageSize40}
-                    source={PATIENT_ICON}/>
-                <View>
-                  <Text style={{fontSize:24, color:'#FFF', fontWeight:'400', paddingLeft:10}}>{name}</Text>
-                </View>
-           </LinearGradient>
+           <UserGradient name={name}/>
            <View style={{padding:15, borderBottomWidth:2, borderBottomColor:'#ebeaec'}}>
               <Text style={{fontSize:18, color:'#9e9fa8'}}>Email</Text>
               <Text style={{fontSize:18, color:'#323940'}}>{email}</Text>
